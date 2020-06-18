@@ -1,0 +1,106 @@
+$primary: #222222;
+$yellow: #ffc107;
+$oragne: #ff8f00;
+$red: #ef5350;
+$pink: #e96290;
+$light-purple: #ab47bc;
+$dark-purple: #651fff;
+$dark-blue: #3949ab;
+$blue: #2196f3;
+$light-blue: #00bcd4;
+$green: #4caf50;
+
+mat-grid-tile { 
+    cursor: pointer;
+    display: flex;
+    .tile-text {
+        color: black;
+        align-self: flex-end;
+        margin: 1rem;
+        opacity: 0;
+        p {
+            width: 80%;
+        }
+    }
+    .overlay {
+        height: 100%;
+        width: 100%;
+        background-color: white;
+        opacity: 0;        
+    }
+    &:hover .overlay{
+        opacity: 0.7;
+    }
+    &:hover .tile-text{
+        opacity: 1;
+    }
+}
+
+header {
+    .prename {
+        clear: both;
+        padding-left: 2rem;
+    }
+    .name span{
+        font-size:10rem;
+        font-weight:800;
+        mix-blend-mode:darken;
+        opacity:.8;
+        line-height: 5rem;
+        letter-spacing:-1rem;
+        &:nth-child(10n+1){color: $yellow}
+        &:nth-child(10n+2){color: $oragne}
+        &:nth-child(10n+3){color: $red}
+        &:nth-child(10n+4){color: $pink}
+        &:nth-child(10n+6){color: $light-purple}
+        &:nth-child(10n+7){color: $dark-purple}
+        &:nth-child(10n+8){color: $dark-blue}
+        &:nth-child(10n+9){color: $blue}
+        &:nth-child(10n+10){color: $light-blue}
+        &:nth-child(10n+11){color: $green}
+    }
+    nav {
+        margin: 1rem 0;
+        float: right;
+        ul {
+            display: flex;
+            margin: 0;
+            li {
+                margin: 0 .5rem;
+                padding: .2rem 0;
+                a {
+                    font-size: 1rem;
+                    font-weight: 700;
+                    color: white;
+                    padding: .2rem 1.2rem;
+                }
+            }
+            .active, li:hover {
+                background-color: white;
+                a {  
+                    color: $primary;
+                }
+            }
+            .active {
+                cursor: default;
+                user-select: none;
+            }
+        }
+    }
+    .summary {
+        font-size: 1.1rem;
+        margin-left: 1em;
+        width: 55%;
+        b {
+            opacity: .8;
+            &:nth-child(10n+1){color: $oragne}
+            &:nth-child(10n+2){color: $blue}
+            &:nth-child(10n+3){color: $green}
+        }
+    }
+}
+
+.grid {
+    margin: 3rem 0;
+}
+

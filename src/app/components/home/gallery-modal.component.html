@@ -1,0 +1,8 @@
+<div mat-dialog-content style="padding: 0;">
+  <mat-grid-list cols="1" rowHeight="8:3" gutterSize="0rem">
+    <mat-grid-tile
+    *ngFor="let img of data.imgs"
+    [ngStyle]="{'background': 'url(https://firebasestorage.googleapis.com/v0/b/portfolio-23816.appspot.com/o/' + img + ') center/cover no-repeat'}">
+    </mat-grid-tile>
+</mat-grid-list>
+</div>

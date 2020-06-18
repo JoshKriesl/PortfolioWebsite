@@ -1,0 +1,53 @@
+
+<div class="container">
+    <header>
+        <nav>
+            <ul>
+                <li class="active"><a>PROJECTS</a></li>
+                <li><a href="#" routerLink="/about">ABOUT</a></li>
+                <li><a href="mailto:joshkriesl@gmail.com">CONTACT</a></li>
+            </ul>
+        </nav>
+        <div>
+            <h1 class="prename">
+                HI! I'M
+            </h1>
+            <h1 class="name">
+                <span>J</span>
+                <span>O</span>
+                <span>S</span>
+                <span>H</span>
+                <br>
+                <span>K</span>
+                <span>R</span>
+                <span>I</span>
+                <span>E</span>
+                <span>S</span>
+                <span>L</span>
+            </h1>
+        </div>
+        <p class="summary">
+            <b>I am a</b> curious individual. My need to know how things work has taken me down many rabbit holes. <b>I thrive on</b> tackling complex problems and seeing the simplicity that often hides in their solutions. <b>I excel at</b> building strong foundations for the systems and solutions I build and hunting down every possible problem they face.
+        </p>
+    </header>
+
+    <section class="grid">
+        <div>
+            <mat-grid-list cols="2" rowHeight="4:3" gutterSize="0.2rem">
+                <mat-grid-tile
+                *ngFor="let project of projects$ | async"
+                [colspan]="project.cols"
+                [rowspan]="1"
+                [ngStyle]="{'background': 'url(https://firebasestorage.googleapis.com/v0/b/portfolio-23816.appspot.com/o/' + project.imgpath + ') center/cover no-repeat'}"
+                (click)="openDialog(project.galleryimgs)">
+                <div class="overlay">
+                    <div class="tile-text">
+                        <h3>{{ project.title }}</h3>
+                        <p>{{ project.description }}</p>
+                    </div>
+                </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+    </section>
+</div>

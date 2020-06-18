@@ -1,0 +1,62 @@
+$primary: #222222;
+$yellow: #ffc107;
+$oragne: #ff8f00;
+$red: #ef5350;
+$pink: #e96290;
+$light-purple: #ab47bc;
+$dark-purple: #651fff;
+$dark-blue: #3949ab;
+$blue: #2196f3;
+$light-blue: #00bcd4;
+$green: #4caf50;
+
+header {
+    nav {
+        margin: 1rem 0;
+        float: right;
+        ul {
+            display: flex;
+            margin: 0;
+            li {
+                margin: 0 .5rem;
+                padding: .2rem 0;
+                a {
+                    font-size: 1rem;
+                    font-weight: 700;
+                    color: white;
+                    padding: .2rem 1.2rem;
+                }
+            }
+            .active, li:hover {
+                background-color: white;
+                a {  
+                    color: $primary;
+                }
+            }
+            .active {
+                cursor: default;
+                user-select: none;
+            }
+        }
+    }
+}
+
+.about {
+    width: 50%;
+    clear: both;
+    text-align: center;
+    margin: 0 auto 8rem;
+    padding-top: 5rem;
+    span{
+        &:nth-child(10n+1){color: $yellow}
+        &:nth-child(10n+2){color: $oragne}
+        &:nth-child(10n+3){color: $red}
+        &:nth-child(10n+4){color: $pink}
+        &:nth-child(10n+5){color: $light-purple}
+        &:nth-child(10n+6){color: $dark-purple}
+        &:nth-child(10n+7){color: $dark-blue}
+        &:nth-child(10n+8){color: $blue}
+        &:nth-child(10n+9){color: $light-blue}
+        &:nth-child(10n+10){color: $green}
+    }
+}
