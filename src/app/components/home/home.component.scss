@@ -10,7 +10,7 @@ $blue: #2196f3;
 $light-blue: #00bcd4;
 $green: #4caf50;
 
-mat-grid-tile { 
+mat-grid-tile {
     cursor: pointer;
     display: flex;
     .tile-text {
@@ -26,7 +26,7 @@ mat-grid-tile {
         height: 100%;
         width: 100%;
         background-color: white;
-        opacity: 0;        
+        opacity: 0;
     }
     &:hover .overlay{
         opacity: 0.7;
@@ -44,7 +44,6 @@ header {
     .name span{
         font-size:10rem;
         font-weight:800;
-        mix-blend-mode:darken;
         opacity:.8;
         line-height: 5rem;
         letter-spacing:-1rem;
@@ -77,7 +76,7 @@ header {
             }
             .active, li:hover {
                 background-color: white;
-                a {  
+                a {
                     color: $primary;
                 }
             }

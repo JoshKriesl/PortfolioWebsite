@@ -4,7 +4,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
-export interface Project { description: string; imgpath: string; title: string }
+export interface Project { description: string; imgpath: string; title: string; cols: number; galleryimgs: string}
 export interface DialogData {
   imgs: Object;
 }
@@ -22,11 +22,11 @@ export class HomeComponent {
   tagFilter$: BehaviorSubject<string>;
 
   screenWidth: number;
-  
+
   constructor(private afs: AngularFirestore, public dialog: MatDialog) {
     this.tagFilter$ = new BehaviorSubject('showall');
     this.projects$ = this.tagFilter$.pipe(
-      switchMap(tag => 
+      switchMap(tag =>
         this.afs.collection<Project>('projects', ref => ref.orderBy('id','desc')).valueChanges()
       )
     );
@@ -56,5 +56,5 @@ export class GalleryModal {
 
   constructor(public dialogRef: MatDialogRef<GalleryModal>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
-    
+
 }
