@@ -1,10 +1,6 @@
 import { Component, HostListener, Inject } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { Observable, BehaviorSubject } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-export interface Project { description: string; imgpath: string; title: string; cols: number; galleryimgs: string}
 export interface DialogData {
   imgs: Object;
 }
@@ -18,19 +14,10 @@ export interface Img {
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  projects$: Observable<Project[]>;
-  tagFilter$: BehaviorSubject<string>;
 
   screenWidth: number;
 
-  constructor(private afs: AngularFirestore, public dialog: MatDialog) {
-    this.tagFilter$ = new BehaviorSubject('showall');
-    this.projects$ = this.tagFilter$.pipe(
-      switchMap(tag =>
-        this.afs.collection<Project>('projects', ref => ref.orderBy('id','desc')).valueChanges()
-      )
-    );
-    this.getScreenSize();
+  constructor(public dialog: MatDialog) {
   }
 
   @HostListener('window:resize', ['$event'])
