@@ -15,7 +15,6 @@ import { AboutComponent } from "./pages/about/about.component";
 import { AppDisplayComponent } from './pages/app-display/app-display.component';
 import { HeaderSmallComponent } from './header-small/header-small.component';
 import { HomeModule } from './pages/home/home.module';
-import { ProjectsComponent } from './projects/projects.component';
 
 
 @NgModule({
@@ -23,8 +22,7 @@ import { ProjectsComponent } from './projects/projects.component';
     AppComponent,
     AboutComponent,
     AppDisplayComponent,
-    HeaderSmallComponent,
-    ProjectsComponent
+    HeaderSmallComponent
   ],
   imports: [
     HomeModule,

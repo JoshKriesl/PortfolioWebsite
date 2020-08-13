@@ -3,14 +3,11 @@
       <mat-grid-list cols="2" rowHeight="4:3" gutterSize="0.4rem">
           <mat-grid-tile
           *ngFor="let category of categories | async"
-          [colspan]="category.cols"
+          [colspan]="1"
           [rowspan]="1"
           [ngStyle]="{'background': 'url(https://firebasestorage.googleapis.com/v0/b/portfolio-23816.appspot.com/o/' + category.imgsrc + ') center/cover no-repeat'}"
           [routerLink]="">
-          <div class="tile-text">
-            <div class="icon"><mat-icon>{{ category.icon }}</mat-icon></div>
-            <h2>{{ category.title }}</h2>
-          </div>
+          <div></div>
           </mat-grid-tile>
       </mat-grid-list>
   </div>

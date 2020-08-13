@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 
-
 export interface Category {
   imgsrc: string;
   cols: number;
   title: string;
   icon: string;
+  route: string;
   id?: string
 }
 
@@ -18,14 +18,15 @@ export interface Category {
 })
 export class CategoriesComponent implements OnInit {
   categoryCollection: AngularFirestoreCollection<Category>;
-  categories: Observable<Category[]>
+  categories: Observable<Category[]>;
+  snapshot: any;
 
   constructor(private afs: AngularFirestore) {
   }
 
   ngOnInit() {
     this.categoryCollection = this.afs.collection('categories', ref => ref.orderBy('order'))
-    this.categories = this.categoryCollection.valueChanges()
+    this.categories = this.categoryCollection.valueChanges({idField: 'id'})
   }
 
 }

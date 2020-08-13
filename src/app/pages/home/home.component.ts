@@ -1,5 +1,6 @@
-import { Component, HostListener, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 export interface DialogData {
   imgs: Object;
@@ -13,17 +14,15 @@ export interface Img {
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
+  routePath: string;
 
-  screenWidth: number;
+  constructor(public dialog: MatDialog, private route: Router) {}
 
-  constructor(public dialog: MatDialog) {
+  ngOnInit () {
+    this.routePath = this.route.url
   }
 
-  @HostListener('window:resize', ['$event'])
-    getScreenSize(event?) {
-          this.screenWidth = window.innerWidth;
-    }
   openDialog(imgs: Array<Img>): void {
     const dialogRef = this.dialog.open(GalleryModal, {
       minWidth: '85vw',

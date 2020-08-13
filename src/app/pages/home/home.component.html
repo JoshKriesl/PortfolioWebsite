@@ -31,5 +31,6 @@
         </p>
     </header>
 
-    <app-categories></app-categories>
+    <app-categories *ngIf="routePath == '/'"></app-categories>
+    <app-projects [docID]="routePath" *ngIf="routePath != '/'"></app-projects>
 </div>

@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+
+interface Project {
+  imgsrc: string;
+}
 
 @Component({
   selector: 'app-projects',
@@ -6,10 +12,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
+  @Input() docID: string;
 
-  constructor() { }
+  categoryCollection: AngularFirestoreCollection<Project>;
+  categories: Observable<Project[]>;
+
+  constructor(private afs: AngularFirestore) { }
 
   ngOnInit() {
+    this.categoryCollection = this.afs.collection('categories' + this.docID + '/projects')
+    this.categories = this.categoryCollection.valueChanges()
   }
 
 }
