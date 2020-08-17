@@ -6,7 +6,7 @@
           [colspan]="category.cols"
           [rowspan]="1"
           [ngStyle]="{'background': 'url(https://firebasestorage.googleapis.com/v0/b/portfolio-23816.appspot.com/o/' + category.imgsrc + ') center/cover no-repeat'}"
-          [routerLink]="category.route">
+          [routerLink]="'/' + category.route">
           <div class="tile-text">
             <div class="icon"><mat-icon>{{ category.icon }}</mat-icon></div>
             <h2>{{ category.title }}</h2>

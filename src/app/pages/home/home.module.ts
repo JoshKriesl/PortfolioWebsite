@@ -4,9 +4,9 @@ import { AppRoutingModule } from '../../app-routing.module';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 
-import { HomeComponent, GalleryModal } from './home.component';
+import { HomeComponent } from './home.component';
 import { CategoriesComponent } from '../../categories/categories.component'
-import { ProjectsComponent } from '../../projects/projects.component'
+import { ProjectsComponent, GalleryModal } from '../../projects/projects.component'
 
 
 @NgModule({

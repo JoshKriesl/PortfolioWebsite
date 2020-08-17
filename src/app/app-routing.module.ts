@@ -7,10 +7,22 @@ import { AppDisplayComponent } from "./pages/app-display/app-display.component"
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
-  { path: 'about', component: AboutComponent},
-  { path: 'programming', component: HomeComponent},
-  { path: 'engineering', component: HomeComponent},
-  { path: 'security', component: HomeComponent}
+  { path: 'programming', children: [
+      { path: '', component: HomeComponent},
+      { path: ':project', component: AppDisplayComponent}
+    ]
+  },
+  { path: 'engineering', children: [
+      { path: '', component: HomeComponent},
+      { path: ':project', component: AppDisplayComponent}
+    ]
+  },
+  { path: 'security', children: [
+      { path: '', component: HomeComponent},
+      { path: ':project', component: AppDisplayComponent}
+    ]
+  },
+  { path: 'about', component: AboutComponent}
 ]
 @NgModule({
   imports: [
@@ -20,3 +32,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

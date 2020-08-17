@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 
 export interface Category {
@@ -21,7 +22,7 @@ export class CategoriesComponent implements OnInit {
   categories: Observable<Category[]>;
   snapshot: any;
 
-  constructor(private afs: AngularFirestore) {
+  constructor(private afs: AngularFirestore, private route: Router) {
   }
 
   ngOnInit() {
