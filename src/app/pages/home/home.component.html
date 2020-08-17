@@ -3,7 +3,8 @@
     <header>
         <nav>
             <ul>
-                <li class="active"><a>PROJECTS</a></li>
+                <li class="active" *ngIf="router.url == '/'"><a>PROJECTS</a></li>
+                <li *ngIf="router.url != '/'"><a href="#" routerLink="/">PROJECTS</a></li>
                 <li><a href="#" routerLink="/about">ABOUT</a></li>
                 <li><a href="mailto:joshkriesl@gmail.com">CONTACT</a></li>
             </ul>

@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header-small',
   templateUrl: './header-small.component.html',
   styleUrls: ['./header-small.component.scss']
 })
-export class HeaderSmallComponent implements OnInit {
+export class HeaderSmallComponent{
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit() {
   }

@@ -17,8 +17,9 @@
     </div>
     <nav class="justify-end">
       <ul>
-        <li class="active"><a>PROJECTS</a></li>
-        <li><a href="#" routerLink="/about">ABOUT</a></li>
+        <li><a href="#" routerLink="/">PROJECTS</a></li>
+        <li class="active" *ngIf="router.url == '/about'"><a>ABOUT</a></li>
+        <li *ngIf="router.url != '/about'"><a href="#" routerLink="/about">ABOUT</a></li>
         <li><a href="mailto:joshkriesl@gmail.com">CONTACT</a></li>
       </ul>
     </nav>
